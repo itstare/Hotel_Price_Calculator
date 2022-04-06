@@ -17,7 +17,7 @@
             @endif
 
             <div class="card">
-                <div class="card-header">Update Price | {{ $price->hotel->name }} | {{ date('d-m-Y', strtotime($price->date)) }} | {{ $price->num_of_nights }} nights</div>
+                <div class="card-header">Update Price | {{ $price->hotel->name }} | {{ date('d-m-Y', strtotime($price->date)) }} | {{ $price->num_of_nights }} nights | {{ $price->room_type }}</div>
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('price.update', $price->id) }}">

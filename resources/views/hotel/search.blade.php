@@ -34,7 +34,11 @@
             <p>0 hotels found.</p>
         @endif
 
-        {{ $hotels->links() }}
+        @if(isset($term))
+            {{ $hotels->appends(['term' => $term])->links() }}
+        @else
+            {{ $hotels->appends(['location' => $location])->links() }}
+        @endif
     </div>
 </div>
 @endsection

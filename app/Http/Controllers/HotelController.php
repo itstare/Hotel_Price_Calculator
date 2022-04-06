@@ -74,7 +74,10 @@ class HotelController extends Controller
     public function searchByLocationQuery(Request $request){
         $hotels = Hotel::where('location', $request->location)->latest()->simplePaginate(20);
 
-        return view('hotel.search', compact('hotels'));
+        return view('hotel.search')->with([
+            'hotels' => $hotels,
+            'location' => $request->location,
+        ]);
     }
 
     public function searchEngine(Request $request){
@@ -82,6 +85,9 @@ class HotelController extends Controller
 
         $hotels = Hotel::query()->where('name', 'LIKE', "%{$search}%")->simplePaginate(20);
 
-        return view ('hotel.search', compact('hotels'));
+        return view ('hotel.search')->with([
+            'hotels' => $hotels,
+            'term' => $search,
+        ]);
     }
 }

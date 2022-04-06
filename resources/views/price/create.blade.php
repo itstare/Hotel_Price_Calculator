@@ -171,6 +171,19 @@
                             </div>
                         </div>
 
+                        <div class="row mt-2">
+                            <div class="form-group">
+                                <label for="room_type">Room Type</label>
+                                <input type="text" name="room_type" class="form-control @error('room_type') is-invalid @enderror">
+
+                                @error('room_type')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                            </div>
+                        </div>
+
                         <button type="submit" class="btn btn-primary mt-3">Submit</button>
                     	@csrf
                     </form>

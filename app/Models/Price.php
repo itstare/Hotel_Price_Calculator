@@ -17,6 +17,7 @@ class Price extends Model
         'vas_price',
         'm97_price',
         'centrotours_price',
+        'room_type',
         'hotel_id',
     ];
 
@@ -28,7 +29,8 @@ class Price extends Model
         if($this->fibula_price === null || $this->vas_price === null){
             return 'N/A';
         } else{
-            return round($this->fibula_price, 2) - round($this->vas_price, 2); 
+            $result = round($this->fibula_price, 2) - round($this->vas_price, 2); 
+            return round($result, 2);
         }
     }
 
@@ -36,7 +38,8 @@ class Price extends Model
         if($this->fibula_price === null || $this->m97_price === null){
             return 'N/A';
         } else{
-            return round($this->fibula_price, 2) - round($this->m97_price, 2); 
+            $result = round($this->fibula_price, 2) - round($this->m97_price, 2); 
+            return round($result, 2);
         }
     }
 
@@ -44,7 +47,8 @@ class Price extends Model
         if($this->fibula_price === null || $this->centrotours_price === null){
             return 'N/A';
         } else{
-            return round($this->fibula_price, 2) - round($this->centrotours_price, 2); 
+            $result = round($this->fibula_price, 2) - round($this->centrotours_price, 2); 
+            return round($result, 2);
         }
     }
 }

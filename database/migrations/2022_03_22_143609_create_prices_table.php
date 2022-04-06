@@ -21,6 +21,7 @@ return new class extends Migration
             $table->float('vas_price')->nullable();
             $table->float('m97_price')->nullable();
             $table->float('centrotours_price')->nullable();
+            $table->string('room_type');
             $table->unsignedBigInteger('hotel_id');
             $table->timestamps();
 

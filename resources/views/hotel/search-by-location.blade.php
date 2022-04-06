@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Search by location') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('hotel.search.location.query') }}">
+                    <form method="GET" action="{{ route('hotel.search.location.query') }}">
                     	<div class="form-group">
                     		<select name="location" class="form-control" required>
                     			@foreach($locations as $location)

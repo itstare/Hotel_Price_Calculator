@@ -25,8 +25,8 @@ Route::get('/hotel/{id}/edit', [App\Http\Controllers\HotelController::class, 'ed
 Route::post('/hotel/{id}/update', [App\Http\Controllers\HotelController::class, 'update'])->middleware('auth')->name('hotel.update');
 Route::get('/hotel/{id}/delete', [App\Http\Controllers\HotelController::class, 'delete'])->middleware('auth')->name('hotel.delete');
 Route::get('/hotel/search-by-location', [App\Http\Controllers\HotelController::class, 'searchByLocation'])->middleware('auth')->name('hotel.search.location');
-Route::post('hotel/search-by-location/query', [App\Http\Controllers\HotelController::class, 'searchByLocationQuery'])->middleware('auth')->name('hotel.search.location.query');
-Route::post('hotel/search', [App\Http\Controllers\HotelController::class, 'searchEngine'])->middleware('auth')->name('hotel.search');
+Route::get('hotel/search-by-location/query', [App\Http\Controllers\HotelController::class, 'searchByLocationQuery'])->middleware('auth')->name('hotel.search.location.query');
+Route::get('hotel/search', [App\Http\Controllers\HotelController::class, 'searchEngine'])->middleware('auth')->name('hotel.search');
 
 Route::get('/price/{hotelId}/create', [App\Http\Controllers\PriceController::class, 'create'])->middleware('auth')->name('price.create');
 Route::post('/price/{hotelId}/input', [App\Http\Controllers\PriceController::class, 'input'])->middleware('auth')->name('price.input');

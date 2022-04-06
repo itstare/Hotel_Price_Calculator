@@ -26,11 +26,12 @@ class PriceController extends Controller
     		'vas_currency' => ['required', 'string'],
     		'm97_currency' => ['required', 'string'],
     		'centrotours_currency' => ['required', 'string'],
+            'room_type' => ['required', 'string', 'max:255'],
     	];
     	$request->validate($rules);
 
     	$hotel = Hotel::where('id', $hotelId)->first();
-    	$price = Price::where('num_of_nights', $request->num_of_nights)->where('date', $request->date)->where('hotel_id', $hotel->id)->get();
+    	$price = Price::where('num_of_nights', $request->num_of_nights)->where('date', $request->date)->where('room_type', $request->room_type)->where('hotel_id', $hotel->id)->get();
 
     	if($price->count() > 0){
     		return back()->with('error', 'Given price already exists');
@@ -74,6 +75,7 @@ class PriceController extends Controller
     			'vas_price' => $vasPrice,
     			'm97_price' => $m97Price,
     			'centrotours_price' => $centrotoursPrice,
+                'room_type' => $request->room_type,
     			'hotel_id' => $hotelId,
     		]); 
 

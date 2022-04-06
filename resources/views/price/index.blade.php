@@ -25,6 +25,7 @@
                             <div class="row my-3">
                                 <div class="col-md-8">
                                     <h2>{{ date('d-m-Y', strtotime($price->date)) }} | {{ $price->num_of_nights }} nights</h2>
+                                    <h6>{{ $price->room_type }}</h6>
                                 </div>
 
                                 <div class="col-md-4">

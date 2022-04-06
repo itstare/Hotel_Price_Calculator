@@ -35,7 +35,7 @@
                     <ul class="navbar-nav me-auto">
                         @auth
                         <li class="nav-item">
-                            <form method="POST" action="{{ route('hotel.search') }}">
+                            <form method="GET" action="{{ route('hotel.search') }}">
                                 <div class="input-group">
                                     <input type="text" class="form-control" name="term" placeholder="Search hotels..." aria-label="Search hotels..." aria-describedby="basic-addon2" required>
                                     <div class="input-group-append">
